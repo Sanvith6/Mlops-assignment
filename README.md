@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 ```bash
 # Run locally
-python main.py --input data.csv --config config.yaml \
+python run.py --input data.csv --config config.yaml \
               --output metrics.json --log-file run.log
 ```
 

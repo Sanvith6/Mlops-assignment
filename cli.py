@@ -5,23 +5,23 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="OHLCV signal generation pipeline")
     parser.add_argument(
         "--input",
-        default="data.csv",
-        help="Path to input CSV file (default: data.csv)",
+        required=True,
+        help="Path to input CSV file",
     )
     parser.add_argument(
         "--config",
-        default="config.yaml",
-        help="Path to YAML config file (default: config.yaml)",
+        required=True,
+        help="Path to YAML config file",
     )
     parser.add_argument(
         "--output",
-        default="metrics.json",
-        help="Path for output metrics JSON (default: metrics.json)",
+        required=True,
+        help="Path for output metrics JSON",
     )
     parser.add_argument(
         "--log-file",
-        default="run.log",
+        required=True,
         dest="log_file",
-        help="Path for log file (default: run.log)",
+        help="Path for log file",
     )
     return parser.parse_args()
