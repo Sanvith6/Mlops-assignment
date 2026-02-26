@@ -21,8 +21,17 @@ def load_config(path: str) -> dict:
         if key not in cfg:
             raise ValueError(f"Invalid configuration file structure: missing key '{key}'")
 
+    try:
+        seed = int(cfg["seed"])
+        window = int(cfg["window"])
+    except (TypeError, ValueError):
+        raise ValueError("Invalid configuration file structure: 'seed' and 'window' must be integers.")
+
+    if window <= 0:
+        raise ValueError("Invalid configuration file structure: 'window' must be > 0.")
+
     return {
-        "seed": int(cfg["seed"]),
-        "window": int(cfg["window"]),
+        "seed": seed,
+        "window": window,
         "version": str(cfg["version"]),
     }

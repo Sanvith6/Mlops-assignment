@@ -205,3 +205,13 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Local assessment/audit scratch files
+bad_config.yaml
+empty.csv
+invalid.csv
+missing_cols.csv
+metrics_check*.json
+metrics_err*.json
+metrics_sheet1.json
+task0_extracted.txt
